@@ -13,4 +13,5 @@ func main() {
 		fmt.Println("remove")
 		fmt.Println("oi")
 	}()
+	// TODO: Add log at and
 }
