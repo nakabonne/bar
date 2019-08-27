@@ -22,5 +22,5 @@ func main() {
 
 func bar() ([]int, error) {
 	nums := []int{1, 2, 3}
-	return nums[1:len(nums)], nil
+	return nums[1:], nil
 }
