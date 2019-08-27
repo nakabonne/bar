@@ -2,7 +2,10 @@ package main
 
 import "fmt"
 
-// heyhey
+type A struct {
+	Name string
+}
+
 func main() {
 	func() {
 		// TODO: Add more option b
@@ -13,5 +16,9 @@ func main() {
 		fmt.Println("remove")
 		fmt.Println("oi")
 	}()
-	// TODO: Add log at and
+	_ = bar()
+}
+
+func bar() error {
+	return nil
 }
