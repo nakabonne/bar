@@ -8,17 +8,19 @@ type A struct {
 
 func main() {
 	func() {
+		var a A
 		// TODO: Add more option b
-		fmt.Println("vim-go")
+		fmt.Println(a)
 
 		TODO := ""
 		fmt.Println(TODO)
 		fmt.Println("remove")
 		fmt.Println("oi")
 	}()
-	_ = bar()
+	_, _ = bar()
 }
 
-func bar() error {
-	return nil
+func bar() ([]int, error) {
+	nums := []int{1, 2, 3}
+	return nums[1:len(nums)], nil
 }
