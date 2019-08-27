@@ -22,5 +22,6 @@ func main() {
 
 func bar() ([]int, error) {
 	nums := []int{1, 2, 3}
+	fmt.Println(nums)
 	return nums[1:], nil
 }
