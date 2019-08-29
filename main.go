@@ -17,10 +17,16 @@ func main() {
 		fmt.Println("remove")
 		fmt.Println("oi")
 	}()
-	_, _ = bar()
+	_, _ = buzz()
 }
 
 func bar() ([]int, error) {
+	nums := []int{1, 2, 3}
+	fmt.Println(nums)
+	return nums[1:], nil
+}
+
+func buzz() ([]int, error) {
 	nums := []int{1, 2, 3}
 	fmt.Println(nums)
 	return nums[1:], nil
