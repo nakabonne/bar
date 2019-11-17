@@ -1,27 +1,27 @@
 package main
 
-import "fmt"
+import (
+	"io/ioutil"
 
-type A struct {
-	Name string
-}
+	"github.com/k0kubun/pp"
+	"github.com/waigani/diffparser"
+)
 
+// error handling left out for brevity
 func main() {
-	func() {
-		var a A
-		// TODO: Add more option b
-		fmt.Println(a)
+	byt, _ := ioutil.ReadFile("example.diff")
+	diff, _ := diffparser.Parse(string(byt))
 
-		TODO := ""
-		fmt.Println(TODO)
-		fmt.Println("remove")
-		fmt.Println("oi")
-	}()
-	_, _ = bar()
-}
+	// You now have a slice of files from the diff,
+	file := diff.Files[0]
 
-func bar() ([]int, error) {
-	nums := []int{1, 2, 3}
-	fmt.Println(nums)
-	return nums[1:], nil
+	// diff hunks in the file,
+	hunk := file.Hunks[0]
+
+	// new and old ranges in the hunk
+	newRange := hunk.NewRange
+
+	// and lines in the ranges.
+	line := newRange.Lines[0]
+	pp.Println(line)
 }
