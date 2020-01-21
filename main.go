@@ -35,7 +35,6 @@ func Hey() { // 22
 }
 
 func Foo() { // 23
-
 	if b1 { // +1
 		if b2 { // +2
 		} else {
@@ -66,13 +65,24 @@ func Foo() { // 23
 	}
 }
 
-func Bar() { // 8
+// elseを加算すると仮定
+func Bar() { // 21
 	if b1 { // +1
 		if b2 { // +2
 			if b3 { // +3
 			} else if b4 { // +1
+			} else { // +1
 			}
 		}
 	} else { // +1
+		if b1 { // +2
+			if b2 { // +3
+			} else { // +1
+				if b3 { // +4
+				} else if b4 { // +1
+				} else { // +1
+				}
+			}
+		}
 	}
 }
