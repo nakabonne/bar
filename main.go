@@ -4,8 +4,9 @@ func main() {
 	Hey()
 }
 
+var b1, b2, b3, b4 bool
+
 func Hey() { // 22
-	var b1, b2, b3, b4 bool
 
 	if b1 { // +1
 		if b2 { // +2
@@ -34,7 +35,6 @@ func Hey() { // 22
 }
 
 func Foo() { // 23
-	var b1, b2, b3, b4 bool
 
 	if b1 { // +1
 		if b2 { // +2
