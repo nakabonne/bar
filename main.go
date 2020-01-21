@@ -65,3 +65,14 @@ func Foo() { // 23
 	} else {
 	}
 }
+
+func Bar() { // 8
+	if b1 { // +1
+		if b2 { // +2
+			if b3 { // +3
+			} else if b4 { // +1
+			}
+		}
+	} else { // +1
+	}
+}
