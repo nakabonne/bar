@@ -1,27 +1,34 @@
 package main
 
-import (
-	"io/ioutil"
-
-	"github.com/k0kubun/pp"
-	"github.com/waigani/diffparser"
-)
-
-// error handling left out for brevity
 func main() {
-	byt, _ := ioutil.ReadFile("example.diff")
-	diff, _ := diffparser.Parse(string(byt))
+	Hey()
+}
 
-	// You now have a slice of files from the diff,
-	file := diff.Files[0]
+func Hey() { // 22
+	var b1, b2, b3, b4 bool
 
-	// diff hunks in the file,
-	hunk := file.Hunks[0]
+	if b1 { // +1
+		if b2 { // +2
+		} else {
+			if b3 { // +3
+			}
+		}
+	}
 
-	// new and old ranges in the hunk
-	newRange := hunk.NewRange
+	if b1 { // +1
+		if b2 { // +2
+		} else if b3 {
+			if b4 { // +3
+			}
+		}
+	}
 
-	// and lines in the ranges.
-	line := newRange.Lines[0]
-	pp.Println(line)
+	if b1 { // +1
+		if b2 { // +2
+			if b3 { // +3
+				if b4 { // +4
+				}
+			}
+		}
+	}
 }
