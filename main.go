@@ -10,6 +10,7 @@ func main() {
 	_ = baz("baz")
 	_ = foo()
 	_ = added()
+	_ = isOne(2)
 }
 
 type Bar struct {
@@ -31,4 +32,8 @@ func foo() error {
 func added() error {
 	msg := "added"
 	return errors.New(fmt.Sprintf("error: %s", msg))
+}
+
+func isOne(i int) bool {
+	return i == 1
 }
